@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>WordPress Dropbox Drop-ins</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;WordPress Dropbox Drop-ins Plugin&rdquo; Documentation by &ldquo;Redwan Hilali&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;WordPress Dropbox Drop-ins&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 31/12/2013<br>
+					By: Redwan Hilali<br>
+					Email: <a href="mailto:youremail@yourdomain.com">hilali.redwan@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/RedhopIT">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#description">Description</a></li>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#shortcode">Shortcode</a></li>
+			<li><a href="#tags">Template Tags</a></li>
+			<li><a href="#quick-start">Quick Start</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			
+		</ol>
+		
+		<hr>
+		
+		<h3 id="description"><strong>A) Description</strong> - <a href="#toc">top</a></h3>
+		<p>
+			This plugins gives your users the ability to Save files directly from your website to their Dropbox account instantly or the other way around, it gives the users the ability to directly upload files from their Dropbox account into your website.
+		</p>
+		<p class="column-description"><a href="https://www.dropbox.com/developers/dropins">Drop-ins</a> are cross-platform UI components that can be integrated in minutes. The <a href="https://www.dropbox.com/developers/dropins/chooser">Chooser</a> provides your app with instant access to files in Dropbox, and the <a href="https://www.dropbox.com/developers/dropins/saver">Saver</a> makes saving files to Dropbox one-click simple.</p>
+		
+		
+		
+		<p>
+			<strong>Saver Drop-in:</strong> The Saver is the easiest way to add files to your users' Dropboxes. With two clicks, a user can download files of any size into their Dropbox, making those files available on all their computers and devices as soon as the download completes. The Saver is a Drop-in component that works on web and mobile web
+		</p>
+		<p>
+			<strong>Chooser Drop-in:</strong>The Chooser is the fastest way to get files from Dropbox into your web app. It's a small JavaScript component that enables your app to get files from Dropbox without having to worry about the complexities of implementing a file browser, authentication, or managing uploads and storage
+		</p>
+		<hr>
+
+		<h3 id="installation"><strong>B) Instalation</strong> - <a href="#toc">top</a></h3>
+
+		<p>In order to use the plugin, there is two steps to get you up and running:</p>
+		<ol>
+		<li>Create a Drop-in app in your Dropbox account</li>
+		<li>Grab the App key and save it in the plugin</li>
+		</ol>
+		<h4>1. Create Drop-in App</h4>
+		<ol>
+		<li> Go to: <a href="https://www.dropbox.com/developers/apps/create">Create Drop-in App</a> (<i>you may need to login</i>)</li>
+		<li>Select: <strong>Drop-ins app</strong>
+			<p><img src="assets/images/screen1.png" alt="Drop-ins" style="border-color:gray;border:solid 1px;"/></p>
+		</li>
+		<li>Give your app a name: e.g: WordPress Demo
+			<p><img src="assets/images/screen2.png" alt="Drop-ins" style="border-color:gray;border:solid 1px;"/></p>
+		</li>
+		<li>Copy the APP Key somewhere, we'll need it. and enter the domain where you'll be using the plugin, you can add as many as you want.
+			<p><img src="assets/images/screen3.png" alt="Drop-ins" style="border-color:gray;border:solid 1px;"/></p>
+		</li>
+		</ol>
+		<h4>2. Save the App key in the plugin settings:</h4>
+		After you install the plugin, Click on "DropinsDB" in the admin panel sidebar menu, paste in your app key, and save! you're done!
+
+
+		<hr>
+		
+		<h3 id="shortcode"><strong>C) Shortcode</strong> - <a href="#toc">top</a></h3>
+		
+		<p>This plugin can be used either by shortcodes or by Template Tags.</p>
+		<h4>Availavle Shortcodes</h4>
+		<p>
+			There is two shortcodes available in this plugins:
+		</p>
+		<ol>
+			<li><strong>Saver Shortcode:</strong>
+				<p>
+					Usage:
+					<pre>
+						[dropbox_saver filename="Specify_file_name_here" url="File URL"]
+					</pre>
+					P.S: filename attribute is optional, if ommitted the filename from the "url" attribute will be used.
+				</p>
+				<strong>Example:</strong>
+				<p>
+					The following shortcode, will save the file advice.png to the user Dropbox under the name: <i>iamSavedFromMars.png</i>
+					<pre>
+					[dropbox_saver filename="iamSavedFromMars.png" url="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png"]
+					</pre>
+				</p>
+				<p>
+					The following shortcode, will save the file advice.png to the user Dropbox under the name: <i>advice.png</i>, so we won't change the name as I didn't specify the filename attribute.
+					<pre>
+					[dropbox_saver url="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png"]
+					</pre>
+				</p>
+				
+			</li>
+		</ol>
+			
+		
+		<hr>
+		<h3 id="tags"><strong>D) Template Tags</strong> - <a href="#toc">top</a></h3>
+		
+		<p>This plugin can be used either by shortcodes or by Template Tags.</p>
+		<h4>Availavle Template Tags</h4>
+		<p>
+			There is two tags available in this plugins:
+		</p>
+		<ol>
+			<li><strong>Saver Tag:</strong>
+				<p>
+					Usage:
+					<pre>
+						<?php dropbox_dropin_saver($url, $filename); ?>
+					</pre>
+					P.S: filename attribute is optional, if ommitted the filename from the "url" attribute will be used.
+				</p>
+				<strong>Example:</strong>
+				<p>
+					The following shortcode, will save the file advice.png to the user Dropbox under the name: <i>iamSavedFromMars.png</i>
+					<pre>
+					&lt;?php
+						$url = "https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png";
+						$newName = "iamSavedFromMars.png";
+						dropbox_dropin_saver($url, $newName);
+					?>	
+					</pre>
+				</p>
+				<p>
+					The following shortcode, will save the file advice.png to the user Dropbox under the name: <i>advice.png</i>, so we won't change the name as I didn't specify the filename attribute.
+					<pre>
+					&lt;?php
+						$url = "https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png";
+						// I didn't specify the filename paramter
+						dropbox_dropin_saver($url);
+					?>
+					</pre>
+				</p>
+				
+			</li>
+		</ol>
+		
+		<h3 id="quick-start"><strong>E) Quick Start</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			1. After you install the plugin, and set it up as described here: <a href="#installation">Configure Drop-ins</a>. <br/>
+			2. Create a new page or post</br>.
+			3. copy this shortcode to the page/post you just create it: [dropbox_saver url="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png"]<br/>
+			4. View the page<br/>
+			5. A button "Save to Dropbox" will be displayed. Click it.</br>
+			6. You'll be prompted to login in Dropbox page. <br/>
+			7. Select where to save.</br>
+			8. Check your folder, is it there? awesome, right?</br>
+			
+		</p>
+		<hr>
+		
+		<h3 id="credits"><strong>F) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, APIs.
+		
+		<ul>
+			<li>Icon.png from Dropbox</li>
+			<li>dropin.js from Dropbox</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this plugin. As I said at the beginning, I'd be glad to help you if you have any questions relating to this plugin. No guarantees, but I'll do my best to assist. If you have a more general question relating to the plugins on CodeCanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Redwan Hilali</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
